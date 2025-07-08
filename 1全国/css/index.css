@@ -1,0 +1,297 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.public-bg{
+    background: rgba(12,26,63,0.3);
+}
+
+.public-title{
+    width: calc(100% - 20px);
+    height: 30px;
+    position: relative;
+    top: 0;
+    left: 5px;
+    color: white;
+    padding-left: 16px;
+    line-height: 30px;
+    font-size: 13px;
+}
+.public-title:before{
+    width: 4px;
+    height: 20px;
+    top: 5px;
+    position: absolute;
+    content: "";
+    background: #2997e4;
+    border-radius: 2px;
+    left: 5px;
+}
+
+.aa {
+    position: fixed;
+    right: 20px;
+    top: 38px; /* 距离顶部30px */
+    width: 20px;
+    height: 20px;
+    background-color: transparent; /* 设置背景颜色为透明 */
+    border: 1px solid black; /* 添加边框以便于查看 */
+    z-index: 1000; /* 确保盒子在其他内容之上 */
+    color: white;
+}
+
+/* 新增按钮样式（调整位置和大小） */
+.jump-btn {
+    position: fixed;
+    right: 1400px; /* 右侧距离调整为100px */
+    top: 100px; /* 顶部距离调整为20px */
+    width: 150px; /* 宽度调整为80px */
+    height: 50px; /* 高度调整为40px */
+    background-color: #4CAF50; /* 绿色按钮 */
+    border: none;
+    color: white;
+    padding: 8px 16px; /* 调整内边距 */
+    text-align: center;
+    align-items: center; /* 垂直居中 */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px; /* 调整字体大小 */
+    border-radius: 6px; /* 调整圆角 */
+    z-index: 1001; /* 确保在登录按钮上方 */
+    cursor: pointer; /* 鼠标悬停显示为指针 */
+}
+
+.jump-btn:hover {
+    background-color: #45a049; /* 鼠标悬停时颜色变深 */
+}
+
+.content-body{
+    width: 100%;
+    height: 100%;
+    background:  url("../../5 绿顶分布情况/images/53bg.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+
+}
+
+.header{
+    height: 70px;
+    width: 100%;
+    /*    border: 1px solid red;*/
+}
+.header .header-left{
+    width: 65%;
+    float: right;
+    line-height: 250px;
+
+}
+.header .header-left span{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 70px;
+    letter-spacing:2px;
+    padding: 0 20px;
+}
+.header .header-time{
+    width: 40%;
+    line-height: 100px;
+    float: right;
+    text-align: right;
+    padding-right: 100px;
+}
+.header .header-time span{
+    color: #ffffff;
+
+}
+.content{
+    width: 100%;
+    height: calc(100% - 75px);
+    position: absolute;
+}
+.content .content-con{
+    height: 100%;
+}
+.content .content-con .left-body{
+    width: 22%;
+    height: 100%;
+    float: left;
+    margin:0 0.3%;
+}
+.left-body .left-top{
+    width: 100%;
+    height: 20%;
+}
+.left-body .left-top .top-body{
+    width: 100%;
+    height: calc(100% - 30px);
+}
+.left-body .left-top .top-body .top-left{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+.top-left-title{
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.top-left-title h6{
+    color: #bad0e2;
+}
+.top-left-title span{
+    margin-top: 30px;
+    display: inline-block;
+    color: #2aa4f1;
+
+    /*    height: 80px;
+        line-height: 80px;*/
+}
+.top-left-title span b{
+    font-size: 30px;
+    letter-spacing:5px;
+}
+.top-left-title img{
+    width: 80%;
+}
+.left-body .left-top .top-body .top-right{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+.left-body .left-con{
+    width: 100%;
+    height: 38%;
+    margin-top: 1.6%;
+}
+.title-nav{
+    width: 100%;
+    height: calc(100% - 30px);
+}
+.left-body .left-bottom{
+    width: 100%;
+    height: 32%;
+    margin-top: 1.6%;
+}
+
+.center-body{
+    width: 54%;
+    height: 100%;
+    margin:0 0.3%;
+    float: left;
+    /*border: 1px solid red;*/
+}
+.center-body .map{
+    width: 100%;
+    height: 100%;
+}
+.right-body{
+    width: 22%;
+    height: 100%;
+    float: right;
+    margin:0 0.3%;
+}
+
+.right-body .right-top{
+    width: 100%;
+    height: 32%;
+}
+.title-nav .top5-ul{
+    width: calc(100% - 20px);
+    height: calc(100% - 30px);
+    padding: 10px;
+}
+.title-nav .top5-ul ul{
+    width: 100%;
+    height: 100%;
+}
+.title-nav .top5-ul ul,li{
+    list-style: none;
+}
+.title-nav .top5-ul ul>li{
+    width: 100%;
+    height: 20%;
+    color: #ffffff;
+    line-height: 68px;
+    justify-content: center;
+}
+.title-nav .top5-ul ul li span{
+    margin-left: 3%;
+    font-size: 14px;
+}
+.title-nav .top5-ul ul li span:nth-child(1){
+    color:  #EB6841;
+    font-style: oblique;
+    /*width: 10%;*/
+    /*#20a8fe
+            #EB6841
+            #3FB8AF
+            #FE4365
+            #FC9D9A*/
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+}
+
+.title-nav .top5-ul ul li span:nth-child(2){
+    width: 10%;
+    display: inline-block;
+    text-align: center;
+
+    height: 30px;
+    line-height: 30px;
+    /*    height: 100%;*/
+    /*line-height: 100%;*/
+    vertical-align: center;
+    border-radius: 5px;
+    color: #ffffff;
+}
+.title-nav .top5-ul ul li:nth-child(1) span:nth-child(2),.title-nav .top5-ul ul li:nth-child(2) span:nth-child(2)
+,.title-nav .top5-ul ul li:nth-child(3) span:nth-child(2){
+    background: #d89346;
+}
+.title-nav .top5-ul ul li:nth-child(4) span:nth-child(2)
+,.title-nav .top5-ul ul li:nth-child(5) span:nth-child(2){
+    background: #1db5ea;
+}
+.title-nav .top5-ul ul li span:nth-child(3){
+    /*width: 15%;*/
+    display: inline-block;
+    text-align: center;
+}
+.title-nav .top5-ul ul li span:nth-child(4){
+    /*width: 15%;*/
+    display: inline-block;
+    text-align: center;
+}
+.title-nav .top5-ul ul li span:nth-child(5){
+    /*width: 20%;*/
+    display: inline-block;
+    text-align: center;
+}
+.title-nav .top5-ul ul li span:nth-child(6){
+    display: inline-block;
+    text-align: center;
+}
+.right-body .right-con{
+    width: 100%;
+    height: 25%;
+    margin-top: 2%;
+}
+.right-body .right-bottom{
+    width: 100%;
+    height: 39%;
+    margin-top: 2%;
+}
+.header-right {
+    position: absolute;
+    right: 60px; /* 距离右侧的距离 */
+    top: 20px; /* 距离顶部的距离 */
+    font-size: 20px; /* 根据需要调整字体大小 */
+    color: #fff; /* 根据需要调整字体颜色 */
+}
