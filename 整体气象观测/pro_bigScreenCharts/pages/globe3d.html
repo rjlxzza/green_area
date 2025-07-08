@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>智顶绿境</title>
+    <link rel="shortcut icon" href="../static/img/favicon.ico">
+    <link rel="stylesheet" href="../static/assets/css/iconfont.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/globe3d.css">
+    <script src="../static/assets/js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body id="investmentRisk">
+<div id="container">
+    <script src="../static/js/common.js"></script>
+    <header></header>
+
+    <main>
+        <!--样式里的l,m,r,t,b分别代表左，中，右，上，下-->
+        <div class="l">
+            <div class="chart-wrap">
+                <h3>智顶绿境-气象预测</h3>
+                <div class="chart-box">
+                    <div class="chart" id="ec01_map3d_globe"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r">
+            <div class="r-t">
+                <div class="chart-wrap">
+                    <h3>天气趋势预测（数据模拟）<!--<button class="more">更多…</button>--></h3>
+                    <div class="input-group startTime-input-wrap">
+                        <label for="startTime_input">今日温度：
+                            <output id="startTime_input_show">22</output>
+                            ℃</label>
+                        <input id="startTime_input" type="range" value="36" min="0" max="120">
+                    </div>
+                    <div class="chart" id="ec03_line_blessings"></div>
+                    <div class="input-group blessings-input-wrap">
+                        <label for="blessings_input">温度 (℃)
+                            <output id="blessings_input_show">22</output>
+                        </label>
+                        <span class="label1">高温</span><span class="label2">低温</span>
+                        <input id="blessings_input" type="range" value="0" min="-100" max="100">
+                    </div>
+                </div>
+            </div>
+            <div class="r-b">
+                <div class="chart-wrap ec04_pie_life">
+                    <h3>天气综合分析（数据模拟）</h3>
+                    <div class="chart" id="ec04_pie_life"></div>
+                    <div class="input-group">
+                        <label for="mindset">云层覆盖度:
+                            <output id="mindset_out">5</output>
+                            <input id="mindset" type="range" value="5" min="0" max="10">
+                        </label>
+                        <label for="mind">降雪概率:
+                            <output id="mind_out">5</output>
+                            <input id="mind" type="range" value="5" min="0" max="10">
+                        </label>
+                        <label for="body">风力等级:
+                            <output id="body_out">5</output>
+                            <input id="body" type="range" value="5" min="0" max="10">
+                        </label>
+                        <label for="workAndRest">降水概率:
+                            <output id="workAndRest_out">5</output>
+                            <input id="workAndRest" type="range" value="5" min="0" max="10">
+                        </label>
+                        <label for="diet">空气质量:
+                            <output id="diet_out">5</output>
+                            <input id="diet" type="range" value="5" min="0" max="10">
+                        </label>
+                        <label for="interest">紫外线强度:
+                            <output id="interest_out">5</output>
+                            <input id="interest" type="range" value="5" min="0" max="10">
+                        </label>
+                    </div>
+                    <p class="text">预测内容：据各项气象指标，模拟天气综合情况，进行评分：<br> <strong id="score"></strong> </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<aside></aside>
+<script>
+    if (notebookOptim) {
+        $('.ec04_pie_life .input-group>label,.r-b .text,#blessings_input,#startTime_input,.blessings-input-wrap .label2').addClass('notebook');
+    }
+</script>
+<script src="../static/assets/js/echarts-4.2.1.min.js"></script>
+<script src="https://echarts.baidu.com/examples/vendors/echarts-gl/echarts-gl.js"></script>
+<script src="../static/assets/js/echarts-gl-1.1.1.js"></script>
+<script src="../static/js/chartsCom.js"></script>
+<script src="../static/js/globe3d.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
