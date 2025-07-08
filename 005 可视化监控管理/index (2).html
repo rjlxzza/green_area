@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绿顶物联可视化监控管理</title>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5ieMMexWmzB9jivTq6oCRX9j"></script>
+</head>
+<body>
+<div id="mapContainer"></div>
+<div class="nav-top">
+    <span class="nav-top-title">绿顶物联可视化监控管理</span>
+    <div class="nav-top-time">
+        <span id="date">2022年11月30日</span>
+        <span id="time">星期五&nbsp;15:34</span>
+    </div>
+</div>
+<!--大屏-->
+<script type="text/javascript" src="lib/loadingScript.js"></script>
+<script type="text/javascript">
+    //初始化地图
+    var map = new BMap.Map("mapContainer",{toolBarVisible:false});
+    var point = new BMap.Point(118.64, 31.14);
+    map.centerAndZoom(point, 12);
+    map.loaded = function () {
+        drawMap(mapData,map);
+    };
+    var map = new BMap.Map('mapContainer');
+    map.centerAndZoom(new BMap.Point(118.64, 31.14),16);
+
+
+    function checkhHtml5()
+    {
+        if (typeof(Worker) === "undefined")
+        {
+            if(navigator.userAgent.indexOf("MSIE 9.0")<=0)
+            {
+                alert("定制个性地图示例：IE9以下不兼容，推荐使用百度浏览器、chrome、firefox、safari、IE10");
+            }
+
+        }
+    }
+    checkhHtml5();
+
+    //时间
+    var timer = null;
+    function setTime(){
+        if(timer !== null){
+            clearTimeout(timer);
+        }
+        setTimeout(function () {
+            $("#date").text(getTime()[0]);
+            $("#time").text(getTime()[1] +"  "+ getTime()[2]);
+            setTime();
+        },1000);
+    }
+    setTime();
+
+    //legend 生成图例
+    function createLegend() {
+        var html = '';
+        html += '<div class="legend-container">';
+            html += '<div class="legend-content"><span><img src="icon/legend.png"/>运维区域</span></div>';
+            html += '<div class="legend-content"><span><span class="red-legend"></span><span style="font-size: 14px;">老旧小区</span></span><span><span class="green-legend"></span><span style="font-size: 14px;">绿顶覆盖率</span><span><span style="margin-right: -10px;"><img src="icon/高亮图标小.png"></span><span style="font-size: 14px;">高亮区域</span></span></span></div>';
+        html += '</div>';
+        $("body").append(html);
+        setLegendPos();
+    }
+    function setLegendPos() {
+        var $legendW = $("body").width() - (270 + 16) * 2;
+        $(".legend-container").css({
+            position:"fixed",
+            top:90,
+            left:296,
+            width:$legendW
+        });
+    }
+    createLegend();
+
+
+    //生成卡片
+    //总指标
+    var zhzb =
+        '<ul>' +
+            '<li><span class="zhzb-li-name">总房屋数<span class="typeStyle">（个）</span></span><span class="zhzb-li-num">653212</span></li>' +
+            '<li><span class="zhzb-li-name">总小区数<span class="typeStyle">（个）</span></span><span class="zhzb-li-num">4321</span></li>' +
+            '<li><span class="zhzb-li-name">总单位数<span class="typeStyle">（个）</span></span><span class="zhzb-li-num">4213</span></li>' +
+            '<li><span class="zhzb-li-name">植物种类数<span class="typeStyle">（个）</span></span><span class="zhzb-li-num">108</span></li>' +
+            '<li><span class="zhzb-li-name">植物覆盖率<span class="typeStyle">（%）</span></span><span class="zhzb-li-num">82.5</span></li>' +
+            '<li><span class="zhzb-li-name">植物存活率<span class="typeStyle">（%）</span></span><span class="zhzb-li-num">97.5</span></li>' +
+        '</ul>';
+
+    var zzb = new CreateTip({
+        id:"zongzhibiao",
+        titleName:"总指标",
+        icon:"icon/总指标.png",
+        pos:{position:"fixed",top:90,left:16},
+        width:270,
+//        html:zhzb
+    });
+    zzb.setData(zhzb);
+
+    //预警
+    var yujing =
+        '<ul>' +
+        '<li><span class="zhzb-li-name">IC卡</span><span class="zhzb-li-num"><span></span><span class="font-w yj-span">100</span></span></li>' +
+        '<li><span class="zhzb-li-name">报站器</span><span class="zhzb-li-num"><span><img src="icon/上升趋势.png"></span><span class="font-w yj-span">120</span></span></li>' +
+        '<li><span class="zhzb-li-name">定位设备</span><span class="zhzb-li-num"><span><img src="icon/下降趋势.png"></span><span class="font-w yj-span">80</span></span></li>' +
+        '</ul>';
+   var yj = new CreateTip({
+        id:"yujing",
+        titleName:"预警",
+        icon:"icon/预警.png",
+        pos:{position:"fixed",top:354,left:16},
+        width:270,
+        //html:yujing
+    });
+    yj.setData(yujing);
+
+    //考勤
+    var kaoqin =
+        '<ul>' +
+        '<li><span class="zhzb-li-name">学校</span><span class="zhzb-li-num">784</span></li>' +
+        '<li><span class="zhzb-li-name">政府</span><span class="zhzb-li-num">53</span></li>' +
+        '<li><span class="zhzb-li-name">写字楼</span><span class="zhzb-li-num">1087</span></li>' +
+        '<li><span class="zhzb-li-name">老旧房屋</span><span class="zhzb-li-num">5884</span></li>' +
+        '<li><span class="zhzb-li-name">新高层小区</span><span class="zhzb-li-num">2870</span></li>' +
+        '</ul>';
+
+    var kq = new CreateTip({
+        id:"kaoqin",
+        titleName:"单位",
+        icon:"icon/考勤.png",
+        pos:{position:"fixed",top:530,left:16},
+        width:270,
+//        html:kaoqin
+    });
+    kq.setData(kaoqin);
+    <!--大屏-->
+    //详细指标
+    var xxzb =
+        '<div id="qybxspm">' +
+            '' +
+        '</div>'+
+        '<div id="qywcspm">' +
+        '' +
+        '</div>'+
+        '<div id="qywclpm">' +
+        '' +
+        '</div>';
+    var xzb = new CreateTip({
+        id:"xxzb",
+        titleName:"详细指标",
+        icon:"icon/详细指标.png",
+        pos:{position:"fixed",top:90,right:16},
+        width:270,
+//        html:xxzb
+    });
+    xzb.setData(xxzb);
+    var qybxspm = new CreateSpeed({
+        id:"qybxspm",
+        icon:"icon/区域报修数排名.png",
+        title:"绿顶区域覆盖数排名",
+        max:1300
+    });
+    qybxspm.setData([
+        {"name":"中部","data":1123,"color":"#55DAED"},
+        {"name":"东部","data":904,"color":"#55B6ED"},
+        {"name":"西部","data":845,"color":"#3F80D2"},
+        {"name":"北部","data":756,"color":"#2B5DB8"},
+        {"name":"南部","data":684,"color":"#1864E3"}
+    ]);
+    var qywcspm = new CreateSpeed({
+        id:"qywcspm",
+        icon:"icon/区域完成数排名.png",
+        title:"绿顶支持数排名",
+        max:1300
+    });
+    qywcspm.setData([
+        {"name":"中部","data":1103,"color":"#55DAED"},
+        {"name":"东部","data":864,"color":"#55B6ED"},
+        {"name":"西部","data":830,"color":"#3F80D2"},
+        {"name":"北部","data":618,"color":"#2B5DB8"},
+        {"name":"南部","data":596,"color":"#1864E3"}
+    ]);
+    var qywclpm = new CreateSpeed({
+        id:"qywclpm",
+        icon:"icon/区域完成率.png",
+        title:"区域参与度排名",
+        max:null
+    });
+    qywclpm.setData([
+        {"name":"中部","data":"23%","color":"#55DAED"},
+        {"name":"东部","data":"36%","color":"#55B6ED"},
+        {"name":"西部","data":"14%","color":"#3F80D2"},
+        {"name":"北部","data":"11%","color":"#2B5DB8"},
+        {"name":"南部","data":"16%","color":"#1864E3"}
+    ]);
+
+    //屏幕自适应适配
+//    window.resize = function () {
+//        setTop();
+//    };
+//    function setTop() {
+//        var $bodyH = $("body").height();
+//        var top = ($bodyH - 660 - 90)/3;
+//        if(top > 0){
+//            $("#zongzhibiao").css({
+//                top:top + 90
+//            });
+//            $("#yujing").css({
+//                top:top + 260 +94
+//            });
+//            $("#kaoqin").css({
+//                top:top + 430 +98
+//            });
+//            $("#xxzb").css({
+//                top:top + 90
+//            });
+//        }
+//    }
+//    setTop();
+</script>
+</body>
+</html>
