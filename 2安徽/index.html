@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/area_echarts.js"></script>
+	<link rel="stylesheet" href="css/comon0.css" />
+
+	<script>
+		$(document).ready(function(){
+			var whei=$(window).width()
+			$("html").css({fontSize:whei/20})
+			$(window).resize(function(){
+				var whei=$(window).width()
+				$("html").css({fontSize:whei/20})
+			});
+		});
+	</script>
+
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+</head>
+<body>
+<div class="loading">
+	<div class="loadbox">
+		<img src="images/loading.gif" /> 页面加载中...
+	</div>
+</div>
+<div class="canvas" style="opacity: .2">
+	<iframe frameborder="0" src="js/index.html" style="width: 100%; height: 100%"></iframe>
+</div>
+<div class="head">
+	<h1>智顶绿境-安徽</h1>
+	<div class="weather">
+		<span>多云转小雨</span>
+		<span id="showTime"></span>
+	</div>
+	<script>
+		var t = null;
+		t = setTimeout(time,1000);//開始运行
+		function time()
+		{
+			clearTimeout(t);//清除定时器
+			dt = new Date();
+			var y=dt.getFullYear();
+			var mt=dt.getMonth()+1;
+			var day=dt.getDate();
+			var h=dt.getHours();//获取时
+			var m=dt.getMinutes();//获取分
+			var s=dt.getSeconds();//获取秒
+			document.getElementById("showTime").innerHTML = y+"年"+mt+"月"+day+"日"+h+"时"+m+"分"+s+"秒";
+			t = setTimeout(time,1000); //设定定时器，循环运行
+		}
+	</script>
+</div>
+<div class="mainbox">
+	<ul class="clearfix">
+		<li>
+			<div class="boxall" id="top3">
+
+				<div class="alltitle">
+					数据总览（公顷）
+				</div>
+
+				<img src="../2安徽/images/数据总览.png" alt="Sales Ranking Image" class="image" style="display:none; position: absolute; top: 250px; left: 730px; width: 200px height: 100%;" />
+
+				<div class="sycm">
+					<ul class="clearfix">
+						<li> <h2>962.4</h2> <span>覆盖面</span></li>
+						<li> <h2>338</h2> <span>日增长</span></li>
+						<li> <h2>337</h2> <span>占比</span></li>
+					</ul>
+				</div>
+				<div class="boxfoot"></div>
+			</div>
+			<div class="boxall">
+				<div class="alltitle alltitle2">
+					绿境环境监测
+				</div>
+				<ul class="tabnav">
+					<li style=" height: auto;">
+						<div class="gdhead">
+
+							<span>品种 </span>
+							<span>种植量（千）</span>
+							<span>占比</span>
+							<span>维护成本（万）</span>
+							<span>花期</span>
+						</div>
+						<div class="scrollDiv" style=" height:1.63rem" id="top1">
+							<ul class="smjl" >
+								<li><span>阿里巴巴 </span><span>佛甲草</span><span>2.7</span><span>2.9</span><span>12%</span><span>9-12</span></li>
+								<li><span>斗南花卉市场</span><span>垂盆草</span><span>9</span><span>10</span><span>12%</span><span>9-12</span></li>
+								<li><span>皖东南苗木交易市场</span><span>薄雪万年草</span><span>8.19</span><span>8.03</span><span>12%</span><span>9-12</span></li>
+								<li><span>当地花卉苗木批发市场</span><span>蓝羊茅</span><span>6</span><span>7</span><span>12%</span><span>9-12</span></li>
+								<li><span>淘宝</span><span>紫藤花苗</span><span>8</span><span>7</span><span>12%</span><span>9-12</span></li>
+								<li><span>拼多多</span><span>凌霄苗</span><span>1</span><span>1</span><span>12%</span><span>9-12</span></li>
+								<li><span>京东</span><span>小叶栀子</span><span>7.5</span><span>8.5</span><span>12%</span><span>9-12</span></li>
+								<li><span>中国苗木网</span><span>木槿</span><span>15</span><span>17</span><span>12%</span><span>9-12</span></li>
+							</ul>
+						</div></li>
+				</ul>
+				<div class="boxfoot"></div>
+			</div>
+			<div class="boxall">
+				<div class="alltitle">
+					绿植受欢迎度排行
+				</div>
+				<div style="height: 3.47rem" id="echart5"></div>
+				<img src="../2安徽/images/销售排行.png" alt="Sales Ranking Image" class="hover-image" style="display:none; position: absolute; top: -320px; left: 730px; width: 100%; height: 100%;" />
+				<div class="boxfoot">
+				</div>
+			</div> </li>
+		<li>
+			<div class="map">
+				<div class="map1">
+					<img src="images/lbx.png" />
+				</div>
+				<div class="map2">
+					<img src="images/jt.png" />
+				</div>
+				<div class="map3">
+<!--					<img src="images/地球.png" />-->
+				</div>
+				<div class="map4" id="map_1">
+				</div>
+			</div>
+			<div class="boxall">
+				<div class="alltitle"  >
+					绿植长势增幅
+				</div>
+				<div class="allnav" style="height: 1.86rem; " id="echart4">
+				</div>
+				<div class="boxfoot"></div>
+			</div> </li>
+		<li>
+			<div class="boxall" style="height: 6.3rem" id="top2">
+				<div class="alltitle ">
+					整体气象观测
+				</div>
+				<div class=" alltitle2">
+					气温变化趋势
+					<div class="titabs">
+<!--						<a href="https://gitee.com/iGaoWei/big-data-view" class="active jsy1">标签1</a>-->
+<!--						<a class="jsy2" href="https://gitee.com/iGaoWei/big-data-view">标签2</a>-->
+<!--						<a class="jsy3" href="https://gitee.com/iGaoWei/big-data-view">标签3</a>-->
+					</div>
+				</div>
+				<div class="allnav2" id="echart21" style="height: 22%"></div>
+				<div class=" alltitle2">
+					降水量动态分析
+					<div class="titabs">
+<!--						<a href="https://gitee.com/iGaoWei/big-data-view" class="active tr01">标签1</a>-->
+<!--						<a class="tr02" href="https://gitee.com/iGaoWei/big-data-view">标签2 </a>-->
+<!--						<a class="tr03" href="https://gitee.com/iGaoWei/big-data-view">标签3</a>-->
+					</div>
+				</div>
+				<div class="allnav2" id="echart22" style="height: 22%"></div>
+				<div class=" alltitle2">
+					气象要素综合监测
+				</div>
+				<div class="allnav2" style="height: 22%">
+					<div class="feng" id="feng01"></div>
+					<div class="feng" id="feng02"></div>
+					<div class="feng" id="feng03"></div>
+				</div>
+				<div class="boxfoot"></div>
+			</div>
+			<div class="boxall" style="height: 2.6rem;">
+				<div class="alltitle">
+					摄像头
+				</div>
+				<div class="allnav sxt">
+					<ul>
+						<li class=""> <img src="./images/map.png" alt="" /> <a href="../67/index.html">启动</a> </li>
+						<li class=""> <img src="./images/map.png" alt="" /> <a href="../67/index.html">启动</a> </li>
+					</ul>
+				</div>
+				<div class="boxfoot"></div>
+			</div> </li>
+	</ul>
+</div>
+<div class="back"></div>
+<meta http-equiv="refresh" content="50;url='https://blog.csdn.net/qq_31766533/article/details/119274641'" />
+<script language="JavaScript" src="js/js.js"></script>
+<script src="js/jquery.liMarquee.js"></script>
+<script>
+	$(function(){
+		$('.scrollDiv').liMarquee({
+			direction: 'up',
+			scrollamount: 30,
+			runshort: false
+		});
+	});
+
+	// 确保页面加载完成后调用地图初始化函数
+	document.addEventListener('DOMContentLoaded', function() {
+		echarts_map();
+	});
+
+	// 绿顶固碳覆盖情况点击切换
+	document.addEventListener("DOMContentLoaded", function() {
+		var top5Container = document.getElementById("echart4");
+		top5Container.addEventListener("click", function() {
+			window.location.href = "../49安徽年销售量/index.html";
+		});
+	});
+
+	//点击市场环境监测
+	document.addEventListener("DOMContentLoaded", function() {
+		var top5Container = document.getElementById("top1");
+		top5Container.addEventListener("click", function() {
+			window.location.href = "../52市场环境监测/index.html";
+		});
+	});
+
+	document.addEventListener("DOMContentLoaded", function() {
+		var top5Container = document.getElementById("top2");
+		top5Container.addEventListener("click", function() {
+			window.location.href = "../整体气象观测/pro_bigScreenCharts/pages/globe3d.html";
+		});
+	});
+
+	// document.addEventListener("DOMContentLoaded", function() {
+	// 	var top5Container = document.getElementById("top3");
+	// 	top5Container.addEventListener("click", function() {
+	// 		// window.location.href = "../48/index.html";
+	// 	});
+	// });
+
+	// 鼠标悬停显示图片
+	document.addEventListener("DOMContentLoaded", function() {
+		var salesRanking = document.getElementById("echart5");
+		var hoverImage = document.querySelector('.hover-image');
+
+		salesRanking.addEventListener('mouseover', function() {
+			hoverImage.style.display = 'block';
+		});
+
+		salesRanking.addEventListener('mouseout', function() {
+			hoverImage.style.display = 'none';
+		});
+	});
+
+	document.addEventListener("DOMContentLoaded", function() {
+		var salesRanking = document.getElementById("top3");
+		var hoverImage = document.querySelector('.image');
+
+		salesRanking.addEventListener('mouseover', function() {
+			hoverImage.style.display = 'block';
+		});
+
+		salesRanking.addEventListener('mouseout', function() {
+			hoverImage.style.display = 'none';
+		});
+	});
+
+</script>
+</body>
+</html>
