@@ -1,0 +1,181 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>index</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+<div class="head clearfix">
+    <div class="home"><a href="#"><img src="images/Home.png" width="28"> <i> 首页</i></a></div>
+    <div class="menu menu1 pulll_left">
+        <ul>
+            <li><a href="#">福建省三明市 </a></li>
+            <li><a href="#">浙江省丽水市</a></li>
+        </ul>
+    </div>
+    <h1 class="pulll_left">绿顶城市主要地区增长量</h1>
+    <div class="menu menu2 pulll_left">
+        <ul>
+            <li><a href="#">福建省南平市 </a></li>
+            <li><a href="#">浙江省温州市</a></li>
+        </ul>
+    </div>
+    <div class="time" id="showTime">2018/6/12 17:00:12</div>
+    <script>
+        var t = null;
+        t = setTimeout(time,1000);//開始运行
+        function time()
+        {
+            clearTimeout(t);//清除定时器
+            dt = new Date();
+            var y=dt.getFullYear();
+            var mt=dt.getMonth()+1;
+            var day=dt.getDate();
+            var h=dt.getHours();//获取时
+            var m=dt.getMinutes();//获取分
+            var s=dt.getSeconds();//获取秒
+            document.getElementById("showTime").innerHTML = y+"/"+mt+"/"+day+" "+h+":"+m+":"+s+"";
+            t = setTimeout(time,1000); //设定定时器，循环运行
+        }
+    </script>
+</div>
+<div class="mainbox" style="flex: 1; overflow-y: auto; padding: 10px;">
+    <ul class="clearfix nav1">
+        <li style="width: 25%">
+            <div class="box">
+                <div class="tit">城市增长</div>
+                <div class="boxnav" id="echart1" style="height: 240px;">
+                </div>
+            </div>
+            <div class="box">
+                <div class="tit">绿顶房屋占有率</div>
+                <div class="boxnav" style="height: 240px;" id="echart21">
+                </div>
+            </div>
+            <div class="box">
+                <div class="tit">中国“绿都”前6名城市</div>
+                <div class="boxnav" id="echart3" style="height: 320px;">
+                </div>
+            </div>
+        </li>
+        <li style="width: 50%">
+            <div class="box">
+                <div class="boxnav mapc" style="height: 660px; position: relative; padding: 0">
+                    <!-- Swiper -->
+                    <div class="swiper-container gallery-top">
+                        <div class="mapnav">
+                            <ul>
+                                <li><div><span>2021年加入小区数量</span><p>358</p></div></li>
+                                <li><div><span>2021年加入小区数量</span><p>913</p></div></li>
+                                <li><div><span>2021年加入小区数量</span><p>1553</p></div></li>
+                                <li><div><span>2021年加入小区数量荷</span><p>2217</p></div></li>
+                            </ul>
+                        </div>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" style="background-image:url(images/1.png)"></div>
+                            <div class="swiper-slide" style="background-image:url(images/2.jpg)"></div>
+                            <div class="swiper-slide" style="background-image:url(images/3.jpg)"></div>
+                            <div class="swiper-slide" style="background-image:url(images/4.jpg)"></div>
+                            <div class="swiper-slide" style="background-image:url(images/0.png)"></div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next swiper-button-white"></div>
+                        <div class="swiper-button-prev swiper-button-white"></div>
+                    </div>
+                    <div class="swiper-container gallery-thumbs">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" style="background-image:url(images/1.png)"></div>
+                            <div class="swiper-slide" style="background-image:url(images/2.jpg)"></div>
+                            <div class="swiper-slide" style="background-image:url(images/3.jpg)"></div>
+                            <div class="swiper-slide" style="background-image:url(images/4.jpg)"></div>
+                            <div class="swiper-slide" style="background-image:url(images/0.png)"></div>
+                        </div>
+                    </div>
+                    <script>
+                        var galleryThumbs = new Swiper('.gallery-thumbs', {
+                            spaceBetween: 0,
+                            slidesPerView: 5,
+                            freeMode: true,
+                            watchSlidesVisibility: true,
+                            watchSlidesProgress: true,
+                        });
+                        var galleryTop = new Swiper('.gallery-top', {
+                            spaceBetween: 10,
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            },
+                            thumbs: {
+                                swiper: galleryThumbs
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+            <ul class="nav1">
+                <li style="width: 50%">
+                    <div class="box">
+                        <div class="tit">2023与2024增长率对比</div>
+                        <div class="boxnav" id="echart4" style="height: 260px;">
+                        </div>
+                    </div>
+                </li>
+                <li style="width: 50%">
+                    <div class="box">
+                        <div class="tit">不同城市增长率对比</div>
+                        <div class="boxnav"  id="echart5" style="height: 260px;">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li style="width: 25%">
+            <div class="box">
+                <div class="boxnav"  style="height: 100px;">
+                    <div class="weather">
+                        <div class="">
+                            <div class="wt1">
+                                <div class="wt2"><img src="images/weather.png"><p>29<sup>℃</sup></p></div>
+                                <span>多云转晴</span>
+                            </div>
+                        </div>
+                        <div class="wt03">
+                            <p><span>气温：</span>20 ~ 32℃</p>
+                            <p><span>降水量：</span>32毫米</p>
+                            <p><span>风况：</span>西北风微风</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="tit">新旧小区使用绿顶数量</div>
+                <div class="boxnav" id="echart6" style="height: 220px;"></div>
+            </div>
+            <div class="box">
+                <div class="tit">新旧小区的增长率对比</div>
+                <div class="boxnav" style="height: 220px;" id="echart7"></div>
+            </div>
+            <div class="box">
+                <div class="tit">各省增长小区数量</div>
+                <div class="boxnav" style="height: 220px;">
+                    <ul class="gnlb">
+                        <li><span>福建省：<em>324</em></span></li>
+                        <li><span>浙江省：<em>258</em></span></li>
+                        <li><span>安徽省：<em>115</em></span></li>
+                        <li><span>湖北省：<em>182</em></span></li>
+                        <li><span>河南省：<em>131</em></span></li>
+                        <li><span>河北省：<em>118</em></span></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
