@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- 头部模块 -->
+    <header>
+        <h1><span>绿顶物联数据可视化</span></h1>
+        <p><span>Data visualization page design</span></p>
+    </header>
+
+    <div class="main">
+        <!-- top5 -->
+        <div class="top5">
+            <div class="top5-title">
+                <span>绿地分布情况TOP5</span>
+            </div>
+            <div class="top5-content">
+                <ul>
+                    <li>
+                        <div class="cicle"></div>
+                        <div class="li-content">
+                            <span>北京市</span>
+                            <span>324000</span>
+                            <span>65%</span>
+                            <span><img src="./images/up.png" alt=""></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cicle"></div>
+                        <div class="li-content">
+                            <span>上海市</span>
+                            <span>278000</span>
+                            <span>58%</span>
+                            <span><img src="./images/up.png" alt=""></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cicle"></div>
+                        <div class="li-content">
+                            <span>杭州市</span>
+                            <span>256000</span>
+                            <span>56%</span>
+                            <span><img src="./images/up.png" alt=""></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cicle"></div>
+                        <div class="li-content">
+                            <span>广州市</span>
+                            <span>237000</span>
+                            <span>54%</span>
+                            <span><img src="./images/up.png" alt=""></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cicle"></div>
+                        <div class="li-content">
+                            <span>重庆市</span>
+                            <span>198000</span>
+                            <span>52%</span>
+                            <span><img src="./images/down.png" alt=""></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="top5-title">
+                <span>情况调研分析</span>
+            </div>
+        </div>
+        <!-- 销售总额 -->
+        <div class="total">
+            <div class="data1">
+                <span>总绿植量</span>
+                <p>5684710000</p>
+            </div>
+            <div class="data2">
+                <span>支持人数</span>
+                <p>14570000</p>
+            </div>
+            <div class="data3">
+                <span>参与的单位数</span>
+                <p>564715</p>
+            </div>
+            <div class="data4">
+                <span>当日增长数</span>
+                <p>14504</p>
+            </div>
+            <canvas class="rain"></canvas>
+            <canvas class="dashed"></canvas>
+            <div class="sphere">
+                <div class="sphere-bg"></div>
+                <div class="sum">
+                    <span>净氧离子</span>
+                    <p>568971401</p>
+                </div>
+            </div>
+            <div class="cicle3"></div>
+            <div class="cicle4"></div>
+            <div class="cicle5"></div>
+            <div class="cicle6"></div>
+            <div class="cicle7"></div>
+            <div class="cicle8">
+                <span>89%</span>
+                <p>绿化占比</p>
+            </div>
+            <div class="cicle9">
+                <span>89%</span>
+                <p>利用率</p>
+            </div>
+            <div class="cicle10">
+                <span>89%</span>
+                <p>覆盖率</p>
+            </div>
+            <div class="cicle11">
+                <span>89%</span>
+                <p>支持率</p>
+            </div>
+        </div>
+        <!-- 会销分析 -->
+        <div class="analyse">
+            <div class="analyse-title">
+                <span>绿顶物联分析</span>
+            </div>
+            <ul>
+                <li>
+                    <img src="./images/s1.png" alt="">
+                    <h5>绿植目标价值</h5><br>
+                    <span>Marketing Target</span><br>
+                    <em>￥4,374,266</em>
+                </li>
+                <li>
+                    <img src="./images/s3.png" alt="">
+                    <h5>绿植覆盖数量</h5><br>
+                    <span>Marketing Target</span><br>
+                    <em>7856000</em>
+                </li>
+                <li>
+                    <img src="./images/s2.png" alt="">
+                    <h5>支持人数</h5><br>
+                    <span>Marketing Target</span><br>
+                    <em>￥4,374,266</em>
+                </li>
+            </ul>
+            <div class="execution">
+                <div class="title">完成情况</div>
+                <div class="cicle1"></div>
+                <div class="cicle2"></div>
+                <div class="waterChart1">
+                    <div class="chart-title">占比率</div>
+                    <div class="chart1"></div>
+                </div>
+                <div class="waterChart2">
+                    <div class="chart-title">支持占比</div>
+                    <div class="chart2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 鞋服配销售分析 -->
+        <div class="sale">
+            <ul>
+                <li>
+                    <div class="showImg">
+                        <img src="./images/shoe.png" alt="">
+                    </div>
+                    <div class="data">
+                        <span>北京市</span>
+                        <span>52563</span>
+                    </div>
+                    <div class="shoeChart"></div>
+                </li>
+                <li>
+                    <div class="showImg">
+                        <img src="./images/clothes.png" alt="">
+                    </div>
+                    <div class="data">
+                        <span>上海市</span>
+                        <span>32563</span>
+                    </div>
+                    <div class="clothesChart"></div>
+                </li>
+                <li>
+                    <div class="showImg">
+                        <img src="./images/mz.png" alt="">
+                    </div>
+                    <div class="data">
+                        <span>广州市</span>
+                        <span>12563</span>
+                    </div>
+                    <div class="mzChart"></div>
+                </li>
+            </ul>
+        </div>
+        <!-- 折线图 -->
+        <div class="lineChart">
+
+        </div>
+    </div>
+
+    <!-- 底部模块 -->
+    <div class="bottom">
+        <h5><span>数据状况</span></h5>
+        <p>Data Status</p>
+    </div>
+</body>
+<script src="./js/jquery-1.11.0.min.js"></script>
+<script src="./js/echarts.min.js"></script>
+<script src="./node_modules/echarts-liquidfill/dist/echarts-liquidfill.min.js"></script>
+<script src="./js/main.js"></script>
+
+</html>
