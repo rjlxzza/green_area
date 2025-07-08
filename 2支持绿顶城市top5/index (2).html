@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- 头部模块 -->
+    <div class="header">
+        <div class="title">
+            <span>绿顶物联数据可视化大屏展示系统</span>
+        </div>
+        <div class="time">
+            <span></span>
+        </div>
+        <div class="company">
+            <span>绿顶物联</span>
+            <span>美丽生活</span>
+        </div>
+    </div>
+
+    <!-- 主题模块 -->
+    <div class="main">
+        <div class="animate">
+            <!-- 浮动层 -->
+            <div class="float">
+
+<!--                第一个-->
+                <div class="floating1">
+
+                    <div id="roate1">
+
+                        <div class="roate-item">
+                            <p>12356</p>
+<!--                            <span>销售额</span>-->
+                        </div>
+
+<!--                        <div class="roate-item">-->
+<!--&lt;!&ndash;                            <p>53%</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span>同比</span>&ndash;&gt;-->
+<!--                        </div>-->
+
+                        <div class="roate-item">
+                            <p>北京市</p>
+                        </div>
+                    </div>
+                    <p class="pm">NO.1</p>
+                </div>
+
+<!--                第二个-->
+                <div class="floating2">
+                    <div id="roate2">
+                        <div class="roate-item2">
+                            <p>12356</p>
+<!--                            <span>销售额</span>-->
+                        </div>
+<!--                        <div class="roate-item2">-->
+<!--                            <p>53%</p>-->
+<!--                            <span>同比</span>-->
+<!--                        </div>-->
+                        <div class="roate-item2">
+                            <p>上海市</p>
+                        </div>
+                    </div>
+                    <p class="pm2">NO.2</p>
+                </div>
+
+                <div class="floating3">
+                    <div id="roate3">
+                        <div class="roate-item3">
+                            <p>12356</p>
+<!--                            <span>销售额</span>-->
+                        </div>
+<!--                        <div class="roate-item3">-->
+<!--                            <p>53%</p>-->
+<!--                            <span>同比</span>-->
+<!--                        </div>-->
+                        <div class="roate-item3">
+                            <p>广州市</p>
+                        </div>
+                    </div>
+                    <p class="pm3">NO.3</p>
+                </div>
+                <div class="floating4">
+                    <div id="roate4">
+                        <div class="roate-item4">
+                            <p>12356</p>
+<!--                            <span>销售额</span>-->
+                        </div>
+<!--                        <div class="roate-item4">-->
+<!--                            <p>53%</p>-->
+<!--                            <span>同比</span>-->
+<!--                        </div>-->
+                        <div class="roate-item4">
+                            <p>杭州市</p>
+                        </div>
+                    </div>
+                    <p class="pm4">NO.4</p>
+                </div>
+                <div class="floating5">
+                    <div id="roate5">
+                        <div class="roate-item5">
+                            <p>12356</p>
+<!--                            <span>销售额</span>-->
+                        </div>
+<!--                        <div class="roate-item5">-->
+<!--                            <p>53%</p>-->
+<!--                            <span>同比</span>-->
+<!--                        </div>-->
+                        <div class="roate-item5">
+                            <p>合肥市</p>
+                        </div>
+                    </div>
+                    <p class="pm5">NO.5</p>
+                </div>
+
+            </div><!-- HTML 结构 -->
+            <div class="sum">
+                <div class="data">
+                    <p>总绿植量估值</p>
+                    <span>2620000</span>
+                </div>
+                <div class="cicle1"></div>
+                <canvas id="canvas1"></canvas>
+                <canvas id="canvas2"></canvas>
+                <div class="data1">
+                    <div class="qiu">
+                        <p>70%</p>
+                    </div>
+                    <span>支持率</span>
+                </div>
+                <div class="data2">
+                    <div class="qiu">
+                        <p>70%</p>
+                    </div>
+                    <span>覆盖率</span>
+                </div>
+                <div class="data3">
+                    <div class="qiu">
+                        <p>86%</p>
+                    </div>
+                    <span>利用率</span>
+                </div>
+                <div class="data4">
+                    <div class="qiu">
+                        <p>73%</p>
+                    </div>
+                    <span>绿化占比</span>
+                </div>
+            </div>
+        </div>
+        <div class="charts">
+            <div class="charts2">
+                <div class="charts-title">
+                    <span>绿植覆盖排名</span>
+                </div>
+                <div class="charts-content2 content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>排名</td>
+                                <td>地区</td>
+                                <td>绿植量</td>
+                                <td>完成情况</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01</td>
+                                <td>北京市</td>
+                                <td>25900</td>
+                                <td style="color: #dbbd73">85%<span class="chart1"></span></td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>上海市</td>
+                                <td>21200</td>
+                                <td style="color: #4bd8ba">85%<span class="chart2"></span></td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>广州市</td>
+                                <td>19300</td>
+                                <td style="color: #4bd8ba">85%<span class="chart3"></span></td>
+                            </tr>
+                            <tr>
+                                <td>04</td>
+                                <td>杭州市</td>
+                                <td>16800</td>
+                                <td style="color: #4bd8ba">85%<span class="chart4"></span></td>
+                            </tr>
+                            <tr>
+                                <td>05</td>
+                                <td>合肥市</td>
+                                <td>14200</td>
+                                <td style="color: #dbbd73">85%<span class="chart5"></span></td>
+                            </tr>
+                            <tr>
+                                <td>06</td>
+                                <td>苏州市</td>
+                                <td>13300</td>
+                                <td style="color: #4bd8ba">85%<span class="chart6"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery-1.11.0.min.js"></script>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/main.js"></script>
+
+</html>

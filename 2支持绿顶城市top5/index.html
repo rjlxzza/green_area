@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+<!-- 头部模块 -->
+<div class="header">
+    <div class="title">
+        <span>智顶绿境-数据可视化大屏展示系统</span>
+
+    </div>
+
+    <div class="time">
+        <span></span>
+    </div>
+
+    <div class="company">
+        <span>绿顶物联</span>
+        <span>美丽生活</span>
+    </div>
+</div>
+
+<!-- 主题模块 -->
+<div class="main">
+    <div class="animate">
+        <!-- 浮动层 -->
+        <div class="float">
+            <!-- 第一个 -->
+            <div class="floating1">
+                <div id="roate1">
+                    <div class="roate-item">
+                        <p>12356</p>
+                    </div>
+                    <div class="roate-item">
+                        <p>北京市</p>
+                    </div>
+                </div>
+                <p class="pm">NO.1</p>
+            </div>
+
+            <!-- 第二个 -->
+            <div class="floating2">
+                <div id="roate2">
+                    <div class="roate-item2">
+                        <p>12356</p>
+                    </div>
+                    <div class="roate-item2">
+                        <p>上海市</p>
+                    </div>
+                </div>
+                <p class="pm2">NO.2</p>
+            </div>
+
+            <div class="floating3">
+                <div id="roate3">
+                    <div class="roate-item3">
+                        <p>12356</p>
+                    </div>
+                    <div class="roate-item3">
+                        <p>广州市</p>
+                    </div>
+                </div>
+                <p class="pm3">NO.3</p>
+            </div>
+            <div class="floating4">
+                <div id="roate4">
+                    <div class="roate-item4">
+                        <p>12356</p>
+                    </div>
+                    <div class="roate-item4">
+                        <p>杭州市</p>
+                    </div>
+                </div>
+                <p class="pm4">NO.4</p>
+            </div>
+            <div class="floating5">
+                <div id="roate5">
+                    <div class="roate-item5">
+                        <p>12356</p>
+                    </div>
+                    <div class="roate-item5">
+                        <p>合肥市</p>
+                    </div>
+                </div>
+                <p class="pm5">NO.5</p>
+            </div>
+        </div>
+        <!-- 总结部分 -->
+        <div class="sum">
+            <div class="data">
+                <p>总绿植量估值</p>
+                <span>2620000</span>
+            </div>
+            <div class="cicle1"></div>
+            <canvas id="canvas1"></canvas>
+            <canvas id="canvas2"></canvas>
+            <div class="data1">
+                <div class="qiu">
+                    <p>70%</p>
+                </div>
+                <span>支持率</span>
+            </div>
+            <div class="data2">
+                <div class="qiu">
+                    <p>70%</p>
+                </div>
+                <span>覆盖率</span>
+            </div>
+            <div class="data3">
+                <div class="qiu">
+                    <p>86%</p>
+                </div>
+                <span>利用率</span>
+            </div>
+            <div class="data4">
+                <div class="qiu">
+                    <p>73%</p>
+                </div>
+                <span>绿化占比</span>
+            </div>
+        </div>
+    </div>
+    <!-- 图表部分 -->
+    <div class="charts">
+        <div class="charts2">
+            <div class="charts-title">
+                <span>绿植覆盖排名</span>
+            </div>
+            <div class="charts-content2 content">
+                <table>
+                    <thead>
+                    <tr>
+                        <td>排名</td>
+                        <td>地区</td>
+                        <td>绿植量</td>
+                        <td>完成情况</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>北京市</td>
+                        <td>25900</td>
+                        <td style="color: #dbbd73">85%<span class="chart1"></span></td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>上海市</td>
+                        <td>21200</td>
+                        <td style="color: #4bd8ba">85%<span class="chart2"></span></td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>广州市</td>
+                        <td>19300</td>
+                        <td style="color: #4bd8ba">85%<span class="chart3"></span></td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>杭州市</td>
+                        <td>16800</td>
+                        <td style="color: #4bd8ba">85%<span class="chart4"></span></td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>合肥市</td>
+                        <td>14200</td>
+                        <td style="color: #dbbd73">85%<span class="chart5"></span></td>
+                    </tr>
+                    <tr>
+                        <td>06</td>
+                        <td>苏州市</td>
+                        <td>13300</td>
+                        <td style="color: #4bd8ba">85%<span class="chart6"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 新增排名折线图容器 -->
+            <div id="coverage-rank-chart" style="width: 100%; height: 500px;"></div>
+        </div>
+
+        <div class="rank-chart">
+            <div class="rank-chart-title">
+                <span>排名变化趋势</span>
+            </div>
+            <div id="rank-chart" style="width: 100%; height: 500px;"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="./js/jquery-1.11.0.min.js"></script>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/main.js"></script>
+<script>
+    // 初始化绿植覆盖排名折线图
+    var coverageRankChart = echarts.init(document.getElementById('coverage-rank-chart'));
+
+    // 绿植覆盖排名折线图的配置
+    var coverageRankOption = {
+        title: {
+            text: '绿植覆盖排名趋势',
+            textStyle: { // 设置标题字体颜色为白色，字体大小为24px
+                color: '#ffffff',
+                fontSize: 24
+            }
+        },
+        tooltip: {
+            trigger: 'axis',
+            textStyle: { // 设置工具提示字体颜色为白色，字体大小为16px
+                color: '#ffffff',
+                fontSize: 16
+            }
+        },
+        legend: {
+            data: ['北京市', '上海市', '广州市', '杭州市', '合肥市', '苏州市'],
+            textStyle: { // 设置图例字体颜色为白色，字体大小为16px
+                color: '#ffffff',
+                fontSize: 16
+            },
+            top: '30px' // 将图例位置往上调整，距离顶部10%
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+            axisLine: { // X轴颜色
+                lineStyle: {
+                    color: '#ffffff'
+                }
+            },
+            axisLabel: { // X轴标签颜色，字体大小为16px
+                textStyle: {
+                    color: '#ffffff',
+                    fontSize: 16
+                }
+            },
+            axisTick: { // X轴刻度颜色
+                lineStyle: {
+                    color: '#ffffff'
+                }
+            }
+        },
+        yAxis: {
+            type: 'value',
+            axisLine: { // Y轴颜色
+                lineStyle: {
+                    color: '#ffffff'
+                }
+            },
+            axisLabel: { // Y轴标签颜色，字体大小为16px
+                textStyle: {
+                    color: '#ffffff',
+                    fontSize: 16
+                }
+            },
+            axisTick: { // Y轴刻度颜色
+                lineStyle: {
+                    color: '#ffffff'
+                }
+            }
+        },
+        series: [
+            {
+                name: '北京市',
+                type: 'line',
+                data: [25900, 26000, 26200, 26500, 26800, 27000, 27200, 27500, 27800, 28000, 28200, 28500]
+            },
+            {
+                name: '上海市',
+                type: 'line',
+                data: [21200, 21300, 21500, 21800, 22000, 22200, 22500, 22800, 23000, 23200, 23500, 23800]
+            },
+            {
+                name: '广州市',
+                type: 'line',
+                data: [19300, 19500, 19800, 20000, 20200, 20500, 20800, 21000, 21200, 21500, 21800, 22000]
+            },
+            {
+                name: '杭州市',
+                type: 'line',
+                data: [16800, 17000, 17300, 17600, 17900, 18200, 18500, 18800, 19000, 19300, 19600, 19900]
+            },
+            {
+                name: '合肥市',
+                type: 'line',
+                data: [14200, 14500, 14800, 15200, 15500, 15800, 16200, 16500, 16800, 17200, 17500, 17800]
+            },
+            {
+                name: '苏州市',
+                type: 'line',
+                data: [13300, 13600, 13900, 14200, 14500, 14800, 15200, 15500, 15800, 16200, 16500, 16800]
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    coverageRankChart.setOption(coverageRankOption);
+</script>
+
+</html>
